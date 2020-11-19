@@ -1,6 +1,5 @@
 function diagonalDifference(arr) {
-    // Write your code here
-    
+
     var n = arr.length;
     var diag1 = 0;
     var diag2 = 0;
@@ -15,4 +14,5 @@ function diagonalDifference(arr) {
         }
     }
     return Math.abs(diag1 - diag2);
+    
 }

@@ -1,4 +1,5 @@
 function plusMinus(arr) {
+
     var i;
     var result = [0, 0, 0]
     for(i=0; i < arr.length; i++){
@@ -14,4 +15,5 @@ function plusMinus(arr) {
     for(j=0; j < result.length; j++){
             console.log(result[j]/arr.length)
     }
+    
 }
