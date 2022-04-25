@@ -1,0 +1,10 @@
+function birthdayCakeCandles(candles) {
+    let sortedCandles = candles.sort((a, b) => a - b),
+        count = 0;
+        for(let i=0; i<candles.length; i++){
+          if (candles[i] == sortedCandles[sortedCandles.length-1]){
+            count++
+        }        
+    }
+    return count
+}
