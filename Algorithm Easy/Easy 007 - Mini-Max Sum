@@ -1,0 +1,6 @@
+function miniMaxSum(arr) {
+    let sortedArray = arr.sort(),
+    maxSum = sortedArray.slice(1,5).reduce((a,b)=> a+b),
+    miniSum = sortedArray.slice(0,4).reduce((a,b)=> a+b)  
+    console.log(miniSum, maxSum)
+}
