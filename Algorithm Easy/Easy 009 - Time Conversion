@@ -1,0 +1,29 @@
+function timeConversion(s) {
+    let removeAMPM = '',
+        result = '';
+        
+    if (s.search('AM') > true) { // find if it's AM or PM
+        // when it's AM and before 12:00:00am
+        removeAMPM = s.slice(0, 8)
+        if (parseInt(s) < 12) {
+            // when it's AM and before 12:00:00am
+            result = removeAMPM
+        } else {
+            // when it's AM and after 12:00:00am
+            result = '00' + removeAMPM.substring(2, 8)
+        }
+    } else if (s.search('PM') > true) {
+        removeAMPM = s.slice(0, 8)
+        if (parseInt(s) < 12) {
+            // when it's PM and before 12:00:00pm
+            removeAMPM = parseInt(s.split(':').join(''))+120000;
+            result = removeAMPM.toString();
+            result = result.slice(0, 2) + ":" + result.slice(2);
+            result = result.slice(0, 5) + ":" + result.slice(5);
+        } else {
+            // when it's PM and after 12:00:00pm
+            result = removeAMPM
+        }
+    }
+    return result;
+}
