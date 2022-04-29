@@ -1,0 +1,23 @@
+function kangaroo(x1, v1, x2, v2) {
+    let firstKangaroo = [],
+        secondKangaroo = [],
+        result = "NO";
+    
+    //create array of kangaroo's positions
+    function arrayOfPositions(positions, kangaroo, jump){
+        positions.push(kangaroo)
+        for(let i=1; i<10000; i++){
+            positions.push(positions[0]+jump*[i])
+        }
+    }
+    arrayOfPositions(firstKangaroo, x1, v1);
+    arrayOfPositions(secondKangaroo, x2, v2);
+
+    for(let j=0; j<firstKangaroo.length; j++){
+            if(firstKangaroo[j] === secondKangaroo[j]){
+            result = "YES";
+            break;
+            }
+    }    
+    return result
+}
