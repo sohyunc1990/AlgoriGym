@@ -1,0 +1,17 @@
+function breakingRecords(scores) {
+    let highest = scores[0],
+        lowest = scores[0],
+        result = [0, 0];
+        
+    //Iterate scores to count breakdowns
+    for(let i=1; i<scores.length; i++){
+        if(scores[i] > highest){
+            highest = scores[i];
+            result[0]++
+        } else if (scores[i] < lowest){
+            lowest = scores[i];
+            result[1]++
+        }
+    }
+    return result;
+}
