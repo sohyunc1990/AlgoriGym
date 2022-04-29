@@ -1,0 +1,30 @@
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    let fallenApples = [],
+        fallenOranges = [],
+        applesInTheHouse = 0,
+        orangesInTheHouse = 0;
+    
+    //create array of fallen fruits
+    function fallenFruits(tree, fruit, array){
+        for(let i=0; i<fruit.length; i++){
+            array.push(tree+fruit[i])
+        }
+    }
+    fallenFruits(a, apples, fallenApples); //create array of fallen apples
+    fallenFruits(b, oranges, fallenOranges); //create array of fallen oranges
+    
+    //Count fallen fruits in the house
+    function countFruits(array, count, houseA, houseB){
+        for(let j=0; j<array.length; j++){
+            // console.log(houseA <= array[j] && array[j] <= houseB)
+            if(houseA <= array[j] && array[j] <= houseB){
+                count++
+            }
+        }
+        return count
+    }
+    applesInTheHouse = countFruits(fallenApples, applesInTheHouse, s, t);
+    orangesInTheHouse = countFruits(fallenOranges, orangesInTheHouse, s, t);
+    console.log(applesInTheHouse);
+    console.log(orangesInTheHouse);
+}
