@@ -1,0 +1,13 @@
+function birthday(s, d, m) {
+    let segment = [],
+        count = 0;
+    
+    //add squares summing to d
+    for(let i=0; i<s.length; i++){
+        segment = s.slice([i], [i+m])
+        if(segment.length == m && segment.reduce((a, b) => a+b) == d){
+            count++
+        }
+    }
+    return count
+}
