@@ -1,0 +1,20 @@
+function migratoryBirds(arr) {
+    let keys = [...new Set(arr)],
+        countings = keys.reduce((acc, curr)=> (acc[curr]=0,acc),{}),
+        result = [0, 0];
+    //count birds
+    for(let j=0; j<arr.length; j++){
+        if(arr[j] in countings){
+            countings[arr[j]] = (countings[arr[j]]+1);
+        }
+    }
+
+    for(let i=Object.keys(countings).length-1; i>-1; i--){
+        if (Object.values(countings)[i] > result[1]){
+            result = [Object.keys(countings)[i], Object.values(countings)[i]]
+        } else if (Object.values(countings)[i] == result[1]){
+            result = [Object.keys(countings)[i], Object.values(countings)[i]]
+        }
+    }
+    return result[0]
+}
