@@ -1,0 +1,11 @@
+function bonAppetit(bill, k, b) {
+    
+    let charged = bill.reduce((a,b)=>a+b) / 2;
+        bill.splice(k, 1);
+    let actual = bill.reduce((a,b)=>a+b) / 2;
+    if(actual == b){
+        console.log("Bon Appetit")
+        } else {
+        console.log(charged-actual)
+  }
+}
