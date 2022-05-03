@@ -1,0 +1,13 @@
+function sockMerchant(n, ar) {
+    let pairs = 0;
+    
+    ar.sort();
+    for (let i=0; i<100; i++){
+        if(ar[i] == undefined){
+        } else if(ar[i] == ar[i+1]){
+          pairs++
+          i++
+        }
+    }
+    return pairs
+}
