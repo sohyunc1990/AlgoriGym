@@ -1,0 +1,36 @@
+function pageCount(n, p) {
+    let pages = [],
+        fromTheBeginning = 0,
+        fromTheEnd = 0;
+    
+    //create pages
+    for(let i=0; i<n+1; i++){
+        pages.push([i, i+1]);
+        i++;
+    };
+
+    //count 'from the beginning' turns
+    for(let j=0; j<pages.length; j++){
+        if(pages[j].includes(p)){
+            break;
+        } else {
+            fromTheBeginning++
+        }
+    };
+    
+    //count 'from the end' turns
+    for(let k=pages.length-1; k>0; k--){
+        if(pages[k].includes(p)){
+            break;
+        } else {
+            fromTheEnd++
+        }
+    };
+    
+    // compare turns and return the result
+    if(fromTheBeginning > fromTheEnd){
+        return fromTheEnd
+    } else {
+        return fromTheBeginning
+    }
+}
