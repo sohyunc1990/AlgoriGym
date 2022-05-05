@@ -1,0 +1,20 @@
+function countingValleys(steps, path) {
+    let valley = 0,
+        level = 0,
+        pathInNumber = [0];
+    
+    for(let j=0; j<path.length; j++){
+        if(path[j] == 'U'){
+            pathInNumber.push(level+= 1)
+        } else if(path[j] == 'D'){
+            pathInNumber.push(level-= 1)
+        }
+    }
+    
+    for(let i=0; i<pathInNumber.length; i++){
+        if(pathInNumber[i] < 0 && pathInNumber[i+1] ==0){
+            valley++
+        }
+    }
+    return valley
+}
