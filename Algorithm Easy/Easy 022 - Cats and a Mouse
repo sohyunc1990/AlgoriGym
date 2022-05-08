@@ -1,0 +1,19 @@
+function catAndMouse(x, y, z) {
+    let catA,
+        catB;
+    
+    //find the distance between cat and mouse
+    function findDistance(cat, mouse){
+        return cat > mouse ? cat - mouse : mouse - cat
+    };
+    catA = findDistance(x, z);
+    catB = findDistance(y, z);
+    
+    if(catA == catB){
+        return "Mouse C"
+    } else if(catA > catB){
+        return "Cat B"
+    } else {
+        return "Cat A"
+    }
+}
