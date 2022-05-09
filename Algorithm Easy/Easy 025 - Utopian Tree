@@ -1,0 +1,12 @@
+function utopianTree(n) {
+    let height = 1;
+        
+    for(let period=1; period<=n; period++){
+        if(period%2 == 0){
+            height+=1
+        } else {
+            height*=2
+        };
+    };
+    return height;
+}
