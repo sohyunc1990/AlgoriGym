@@ -1,0 +1,16 @@
+function designerPdfViewer(h, word) {
+    let letter = 'abcdefghijklmnopqrstuvwxyz',
+        indexOfLetters = [],
+        heights = []
+    
+    //find index of word in letter
+    for(let i=0; i<word.length; i++){
+       indexOfLetters.push(letter.indexOf(word[i])) 
+    }
+    
+    for(let j=0; j<indexOfLetters.length; j++){
+        heights.push(h[indexOfLetters[j]])
+    }
+    
+    return (heights.sort((a, b)=>a-b).pop())*(word.length)
+}
