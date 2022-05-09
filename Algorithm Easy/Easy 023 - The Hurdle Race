@@ -1,0 +1,5 @@
+function hurdleRace(k, height) {
+    height.sort((a, b)=>a-b);
+    let highestHurdle = height.pop();
+    return highestHurdle>k? highestHurdle-k : 0
+}
