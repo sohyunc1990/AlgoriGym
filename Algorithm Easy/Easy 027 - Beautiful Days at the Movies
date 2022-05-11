@@ -1,0 +1,22 @@
+function beautifulDays(i, j, k) {
+    let days = [],
+        calculationOfTheDays = [],
+        answer = 0;
+    
+    //create array of days
+    for(let a=i; a<=j; a++){
+        days.push(a)
+    }
+    
+    //calculate the days
+    for(let b=0; b<days.length; b++){
+        let reversedDays = days[b].toString().split("").reverse().join(""),
+            calculated;
+        days[b]>reversedDays? calculated = (days[b]-reversedDays)/k : calculated = (reversedDays-days[b])/k
+        calculationOfTheDays.push(calculated)
+    };
+    
+    //count the answer
+    calculationOfTheDays.map(x=>x%1==0? answer++ : answer)
+    return answer
+}
