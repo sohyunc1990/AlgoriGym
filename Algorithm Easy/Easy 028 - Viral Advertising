@@ -1,0 +1,10 @@
+function viralAdvertising(n) {
+    let progression = [5, 2, 2];
+    
+    for(let i=1; i<n; i++){   
+        progression[2] += Math.floor(progression[1]*3/2)
+        progression[0] = progression[1]*3   
+        progression[1] = Math.floor(progression[0]/2)
+    }
+    return progression[2]
+}
