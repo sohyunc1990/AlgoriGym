@@ -1,0 +1,10 @@
+function circularArrayRotation(a, k, queries) {
+    let result = [];
+    for(let i=0; i<k; i++){
+        a.unshift(a.pop())
+    };
+    for(let j=0; j<queries.length; j++){
+      result.push(a[queries[j]])
+    }
+    return result
+}
