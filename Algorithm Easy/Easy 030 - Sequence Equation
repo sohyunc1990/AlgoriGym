@@ -1,0 +1,21 @@
+function permutationEquation(p) {
+    let indexNumber = [],
+        answer = [];
+    
+    for(let j=1; j<=p.length; j++){
+        for(let i=0; i<p.length; i++){
+            if(j == p[i]){
+                indexNumber.push(i+1)
+            }
+        }
+    }
+    
+    for(let k=0; k<indexNumber.length; k++){
+        for(let l=0; l<p.length; l++){
+            if(p[l] == indexNumber[k]){
+                answer.push(l+1)
+            }
+        }
+    }
+    return answer
+}
