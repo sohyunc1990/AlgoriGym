@@ -1,0 +1,19 @@
+function appendAndDelete(s, t, k) {
+    let numOfDelete = 0,
+        numOfAppend = 0;
+        
+    for(let i=0; i<s.length; i++){
+        if (s[i] !== t[i]){
+            numOfDelete=s.slice(i).length
+            break;
+        }
+    }
+
+    for(let j=0; j<t.length; j++){
+        if (t[j] !== s[j]){
+            numOfAppend=t.slice(j).length
+            break;
+        }
+    }
+    return numOfAppend+numOfDelete <= k? "Yes" : "No"
+}
